@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        #parentDiv
+    {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        padding: 10px;
+    }
+    #parentDiv div{
+        display: flex;
+        flex-direction: column;
+    }
+    </style>
+</head>
+<body>
+    <form name="myForm" method="get" action="#">
+        <div id="parentDiv">
+            <div>
+                <label>Your login:</label>
+                <input type="text" name="login">
+            </div>
+            <div>
+                <label>Your password:</label>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <span>Remember me:
+                <input type="checkbox" name="remember"></span>
+            </div>
+            <div>
+                <input id="but" type="submit" value="Sign in" name="button">          
+            </div>
+        </div>
+    </form>
+    <script>
+        let form = document.forms[0];
+        let login = form["login"];
+        let remember = form["remember"];
+        let button = document.getElementById("but");
+
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            let message = "Привет, " + login.value + " Я вас ";
+            if (remember.checked) 
+            {
+                message += "ЗАПОМНИЛА";
+            } 
+            else 
+            {
+                message += "НЕ ЗАПОМНИЛА";
+            }
+            alert(message);
+        });
+    </script>
+</body>
+</html>

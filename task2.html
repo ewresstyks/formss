@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 20px;
+            width: 50%;
+            border: 2px solid black;
+        }
+
+        input {
+            width: 50%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <div>
+            <label for="email">Your email:</label>
+            <input type="email" name="email">
+            </div>
+            <div>
+            <label for="username">Your login:</label>
+            <input type="text" name="username">
+            </div>  
+            <div>
+            <label for="password">Your password:</label>
+            <input type="password" name="password">
+            </div>
+            <div>
+            <label for="password">Repeat password:</label>
+            <input type="password" name="password">
+            </div>
+            <button type="submit"id="but">Sign up now!</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('but').addEventListener('click', function () {
+            let email = form["email"];
+            alert("На вашу почту" + email + "отправлено подтверждение!");
+        });
+    </script>
+</body>
+</html>
